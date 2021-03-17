@@ -10,19 +10,26 @@ class MainButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      child: Text(
-        buttonText,
-        style: mainButtonText,
-      ),
-      style: ElevatedButton.styleFrom(
-        primary: activeColor,
-        padding: const EdgeInsets.symmetric(
-          vertical: 10.0,
-          horizontal: 70.0,
+    return Row(
+      children: [
+        Expanded(
+          flex: 1,
+          child: ElevatedButton(
+            onPressed: onPressed,
+            child: Text(
+              buttonText,
+              style: mainButtonText,
+            ),
+            style: ElevatedButton.styleFrom(
+              primary: activeColor,
+              padding: const EdgeInsets.symmetric(
+                vertical: 10.0,
+                horizontal: 70.0,
+              ),
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 }

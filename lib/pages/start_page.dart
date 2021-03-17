@@ -19,20 +19,23 @@ class StartPage extends StatelessWidget {
           statusBarIconBrightness: Brightness.light,
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(""),
-          Center(
-            child: Text(
-              'Press Start Survey',
-              style: pageTitleText,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: 30.0,
+          horizontal: 70.0,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(""),
+            Center(
+              child: Text(
+                'Press Start Survey',
+                style: pageTitleText,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 40.0),
-            child: MainButton(
+            MainButton(
               buttonText: 'Start Survey',
               onPressed: () {
                 Navigator.push(
@@ -43,8 +46,8 @@ class StartPage extends StatelessWidget {
                 );
               },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

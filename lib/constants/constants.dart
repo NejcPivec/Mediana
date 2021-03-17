@@ -38,3 +38,9 @@ const mainButtonText = TextStyle(
   color: bgColor,
   fontWeight: FontWeight.bold,
 );
+
+/* Anwser Text */
+const anwserText = TextStyle(
+  fontSize: 18.0,
+  color: activeColor,
+);

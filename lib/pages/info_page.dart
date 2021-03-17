@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mediana/constants/constants.dart';
+import 'package:mediana/widgets/main_button.dart';
+import 'package:mediana/widgets/page_indicator.dart';
 
 class InfoPage extends StatefulWidget {
   InfoPage({Key key}) : super(key: key);
@@ -22,10 +24,41 @@ class _InfoPageState extends State<InfoPage> {
           statusBarIconBrightness: Brightness.light,
         ),
       ),
-      body: Column(
-        children: [
-          Text('Info page'),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: 30.0,
+          horizontal: 70.0,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                for (int i = 0; i < 6; i++)
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15.0),
+                    child: (i == 0 || i == 1)
+                        ? PageIndicator(
+                            color: activeColor,
+                          )
+                        : PageIndicator(
+                            color: inactiveColor,
+                          ),
+                  ),
+              ],
+            ),
+            Text(
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat sem ut elit posuere ultrices. Integer ullamcorper dolor velit, nec ultricies ligula placerat non. Quisque velit nisi, aliquet nec accumsan in, elementum a turpis.',
+              style: anwserText,
+            ),
+            MainButton(
+              buttonText: 'Next',
+              onPressed: () {
+                print('New page');
+              },
+            )
+          ],
+        ),
       ),
     );
   }

@@ -18,27 +18,30 @@ class SubmitPage extends StatelessWidget {
           statusBarIconBrightness: Brightness.light,
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(""),
-          Center(
-            child: Text(
-              'Thank You',
-              style: pageTitleText,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: 30.0,
+          horizontal: 70.0,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(""),
+            Center(
+              child: Text(
+                'Thank You',
+                style: pageTitleText,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 40.0),
-            child: MainButton(
+            MainButton(
               buttonText: 'Submit Servey',
               onPressed: () {
                 print('Submit survey');
               },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
