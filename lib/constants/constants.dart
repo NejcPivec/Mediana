@@ -12,6 +12,13 @@ const mainTitleText = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+/* Page Title - Start, End*/
+const pageTitleText = TextStyle(
+  fontSize: 30.0,
+  color: activeColor,
+  fontWeight: FontWeight.bold,
+);
+
 /* Description Text */
 const descriptionText = TextStyle(
   fontSize: 15.0,
@@ -22,5 +29,12 @@ const descriptionText = TextStyle(
 const settingsIconText = TextStyle(
   fontSize: 15.0,
   color: activeColor,
+  fontWeight: FontWeight.bold,
+);
+
+/* Button Text */
+const mainButtonText = TextStyle(
+  fontSize: 20.0,
+  color: bgColor,
   fontWeight: FontWeight.bold,
 );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mediana/constants/constants.dart';
+import 'package:mediana/pages/start_page.dart';
 import 'package:mediana/widgets/settings_card.dart';
 
 class MainPage extends StatefulWidget {
@@ -94,7 +95,12 @@ class _MainPageState extends State<MainPage> {
                 cardIcon: Icons.play_arrow,
                 cardDescription: 'Demo',
                 onPress: () {
-                  print('Demo Pressed');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => StartPage(),
+                    ),
+                  );
                 },
               ),
             ],
