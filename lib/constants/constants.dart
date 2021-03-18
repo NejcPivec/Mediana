@@ -5,6 +5,8 @@ const activeColor = Color(0xFF14213D);
 const inactiveColor = Color(0xFFE5E5E5);
 const bgColor = Color(0xFFFFFFFF);
 
+const notSelectedColor = Color.fromRGBO(20, 33, 61, 0.5);
+
 /* Main Title */
 const mainTitleText = TextStyle(
   fontSize: 40.0,
@@ -43,4 +45,11 @@ const mainButtonText = TextStyle(
 const anwserText = TextStyle(
   fontSize: 18.0,
   color: activeColor,
+);
+
+/* Not selected Item Text */
+const notSelectedItemText = TextStyle(
+  color: notSelectedColor,
+  fontSize: 15.0,
+  fontWeight: FontWeight.bold,
 );

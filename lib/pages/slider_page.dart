@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mediana/constants/constants.dart';
-import 'package:mediana/pages/radio_page.dart';
 import 'package:mediana/widgets/main_button.dart';
 import 'package:mediana/widgets/page_indicator.dart';
 
-class InfoPage extends StatefulWidget {
-  InfoPage({Key key}) : super(key: key);
+class SliderPage extends StatefulWidget {
+  SliderPage({Key key}) : super(key: key);
 
   @override
-  _InfoPageState createState() => _InfoPageState();
+  _SliderPageState createState() => _SliderPageState();
 }
 
-class _InfoPageState extends State<InfoPage> {
+class _SliderPageState extends State<SliderPage> {
+  double _currentSliderValue = 5;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +39,7 @@ class _InfoPageState extends State<InfoPage> {
                 for (int i = 0; i < 6; i++)
                   Padding(
                     padding: const EdgeInsets.only(right: 15.0),
-                    child: (i == 0)
+                    child: (i == 0 || i == 1 || i == 2)
                         ? PageIndicator(
                             color: activeColor,
                           )
@@ -49,18 +50,38 @@ class _InfoPageState extends State<InfoPage> {
               ],
             ),
             Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat sem ut elit posuere ultrices. Integer ullamcorper dolor velit, nec ultricies ligula placerat non. Quisque velit nisi, aliquet nec accumsan in, elementum a turpis.',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat sem ut elit posuere ultrices?',
               style: anwserText,
+            ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Slider(
+                    value: _currentSliderValue,
+                    min: 0,
+                    max: 10,
+                    activeColor: activeColor,
+                    inactiveColor: inactiveColor,
+                    onChanged: (double value) {
+                      setState(() {
+                        _currentSliderValue = value;
+                      });
+                    },
+                  ),
+                ),
+              ],
             ),
             MainButton(
               buttonText: 'Next',
               onPressed: () {
-                Navigator.push(
+                /*  Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => RadioPage(),
+                    builder: (context) => SliderPage(),
                   ),
-                );
+                ); */
+                print('Next page');
               },
             )
           ],
