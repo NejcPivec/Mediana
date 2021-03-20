@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mediana/constants/constants.dart';
-import 'package:mediana/pages/text_page.dart';
 import 'package:mediana/widgets/main_button.dart';
 import 'package:mediana/widgets/page_indicator.dart';
 
-class SliderPage extends StatefulWidget {
-  SliderPage({Key key}) : super(key: key);
+class TextPage extends StatefulWidget {
+  TextPage({Key key}) : super(key: key);
 
   @override
-  _SliderPageState createState() => _SliderPageState();
+  _TextPageState createState() => _TextPageState();
 }
 
-class _SliderPageState extends State<SliderPage> {
-  double _currentSliderValue = 5;
-
+class _TextPageState extends State<TextPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('Mediana'),
         backgroundColor: activeColor,
@@ -40,7 +38,7 @@ class _SliderPageState extends State<SliderPage> {
                 for (int i = 0; i < 6; i++)
                   Padding(
                     padding: const EdgeInsets.only(right: 15.0),
-                    child: (i == 0 || i == 1 || i == 2)
+                    child: (i <= 3)
                         ? PageIndicator(
                             color: activeColor,
                           )
@@ -54,51 +52,39 @@ class _SliderPageState extends State<SliderPage> {
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat sem ut elit posuere ultrices?',
               style: anwserText,
             ),
-            Column(
-              children: [
-                Row(
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: Slider(
-                        value: _currentSliderValue,
-                        min: 0,
-                        max: 10,
-                        activeColor: activeColor,
-                        inactiveColor: inactiveColor,
-                        onChanged: (double value) {
-                          setState(() {
-                            _currentSliderValue = value;
-                          });
-                        },
+            Padding(
+              padding: const EdgeInsets.only(bottom: 170.0),
+              child: Container(
+                margin: const EdgeInsets.all(12),
+                height: 5 * 24.0,
+                child: TextField(
+                  cursorColor: activeColor,
+                  maxLines: 5,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: inactiveColor,
                       ),
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
-                  ],
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: activeColor),
+                    ),
+                    hintText: "Enter text",
+                  ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Bad',
-                      style: sliderText,
-                    ),
-                    Text(
-                      'Good',
-                      style: sliderText,
-                    ),
-                  ],
-                ),
-              ],
+              ),
             ),
             MainButton(
               buttonText: 'Next',
               onPressed: () {
-                Navigator.push(
+                /*  Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TextPage(),
+                    builder: (context) => SliderPage(),
                   ),
-                );
+                ); */
+                print('Next page');
               },
             )
           ],

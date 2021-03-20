@@ -53,3 +53,10 @@ const notSelectedItemText = TextStyle(
   fontSize: 15.0,
   fontWeight: FontWeight.bold,
 );
+
+/* SLider Text */
+const sliderText = TextStyle(
+  color: activeColor,
+  fontSize: 15.0,
+  fontWeight: FontWeight.w600,
+);
