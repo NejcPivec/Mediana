@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import 'constants/constants.dart';
 import 'pages/main_page.dart';
 
 void main() {
+  /* debugPaintSizeEnabled = true; */
   runApp(MedianaApp());
 }
 
